@@ -87,7 +87,7 @@ function ServicesMobile() {
 function ServicesDesktop() {
   const ref = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref });
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
   const [range, setRange] = useState(0);
   const [active, setActive] = useState(0);
 
@@ -108,8 +108,8 @@ function ServicesDesktop() {
     };
   }, []);
 
-  const x = useTransform(scrollYProgress, [0.08, 0.95], [0, -range]);
-  const progress = useTransform(scrollYProgress, [0.08, 0.95], [0, 1]);
+  const x = useTransform(scrollYProgress, [0.05, 0.92], [0, -range]);
+  const progress = useTransform(scrollYProgress, [0.05, 0.92], [0, 1]);
 
   useMotionValueEvent(progress, "change", (v) => {
     setActive(Math.min(services.length - 1, Math.max(0, Math.floor(v * services.length))));
@@ -122,7 +122,7 @@ function ServicesDesktop() {
       style={{ height: `${services.length * 65}vh` }}
     >
       <div className="sticky top-0 h-[100svh] overflow-hidden flex flex-col">
-        <div className="container-x pt-10 md:pt-12 pb-3 md:pb-4">
+        <div className="container-x pt-10 md:pt-12 pb-8 md:pb-12">
           <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-3 md:gap-4">
             <div>
               <SectionMarker label="Signature Services" />
@@ -176,7 +176,7 @@ function ServicesDesktop() {
 
 function ServiceCard({ service }: { service: (typeof services)[number] }) {
   return (
-    <div className="group relative flex-shrink-0 w-[34vw] lg:w-[28vw] xl:w-[24vw] h-[calc(100vh-260px)] max-h-[480px] flex flex-col rounded-[2px] overflow-hidden">
+    <div className="group relative flex-shrink-0 w-[30vw] lg:w-[24vw] xl:w-[20vw] h-[min(calc(100vh-360px),420px)] flex flex-col rounded-[2px] overflow-hidden">
       {/* Image — top portion */}
       <div className="relative flex-[1.1] overflow-hidden bg-stone-700">
         <Image
