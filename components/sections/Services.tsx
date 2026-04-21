@@ -176,44 +176,43 @@ function ServicesDesktop() {
 
 function ServiceCard({ service }: { service: (typeof services)[number] }) {
   return (
-    <div className="group relative flex-shrink-0 w-[44vw] lg:w-[36vw] xl:w-[32vw] h-[58vh] lg:h-[62vh]">
-      <div className="relative h-full w-full overflow-hidden rounded-[2px] bg-stone-700">
+    <div className="group relative flex-shrink-0 w-[38vw] lg:w-[30vw] xl:w-[26vw] h-[54vh] lg:h-[58vh] flex flex-col rounded-[2px] overflow-hidden">
+      {/* Image — top portion */}
+      <div className="relative flex-[1.1] overflow-hidden bg-stone-700">
         <Image
           src={service.image}
           alt={service.title}
           fill
-          sizes="(min-width: 1280px) 40vw, (min-width: 1024px) 46vw, 58vw"
+          sizes="(min-width: 1280px) 26vw, (min-width: 1024px) 30vw, 38vw"
           className="object-cover transition-transform duration-[1.4s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.05]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-stone-900/95 via-stone-900/50 to-stone-900/15" />
-      </div>
-
-      <div className="absolute inset-0 flex flex-col justify-between p-5 md:p-7 text-ivory">
-        <div className="flex items-center justify-between">
-          <span className="font-mono text-[0.75rem] tracking-[0.18em] text-ivory/60">
+        <div className="absolute inset-0 bg-stone-900/15" />
+        <div className="absolute top-4 left-5 right-5 flex items-center justify-between">
+          <span className="font-mono text-[0.72rem] tracking-[0.18em] text-ivory/70">
             — {service.index}
           </span>
-          <span className="text-[0.7rem] uppercase tracking-[0.22em] text-champagne">
+          <span className="text-[0.66rem] uppercase tracking-[0.2em] text-champagne">
             Signature
           </span>
         </div>
+      </div>
 
-        <div>
-          <h3 className="font-serif text-3xl md:text-4xl tracking-tightest leading-[1.02] text-ivory mb-3">
-            {service.title}
-          </h3>
-          <p className="max-w-md text-[0.88rem] leading-[1.55] text-ivory/80 mb-4">
-            {service.description}
-          </p>
-          <ul className="flex flex-wrap gap-x-5 gap-y-2 text-[0.8rem] text-ivory/70">
-            {service.features.map((f) => (
-              <li key={f} className="flex items-center gap-2">
-                <span className="h-1 w-1 rounded-full bg-champagne" />
-                {f}
-              </li>
-            ))}
-          </ul>
-        </div>
+      {/* Text — solid background, never hidden */}
+      <div className="flex-1 bg-stone-800 p-5 md:p-6 flex flex-col justify-center text-ivory">
+        <h3 className="font-serif text-2xl md:text-[1.7rem] tracking-tightest leading-[1.08] text-ivory mb-2">
+          {service.title}
+        </h3>
+        <p className="text-[0.82rem] leading-[1.55] text-ivory/75 mb-3 line-clamp-3">
+          {service.description}
+        </p>
+        <ul className="flex flex-wrap gap-x-4 gap-y-1.5 text-[0.72rem] text-ivory/60">
+          {service.features.map((f) => (
+            <li key={f} className="flex items-center gap-1.5">
+              <span className="h-1 w-1 rounded-full bg-champagne" />
+              {f}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
