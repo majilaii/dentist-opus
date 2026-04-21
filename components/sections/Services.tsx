@@ -141,11 +141,11 @@ function ServicesDesktop() {
           </div>
         </div>
 
-        <div className="relative flex-1 py-4">
+        <div className="relative flex-1 min-h-0 flex items-center">
           <motion.div
             ref={trackRef}
             style={{ x }}
-            className="absolute inset-0 my-2 flex items-center gap-6 lg:gap-8 pl-[8vw] lg:pl-[12vw] xl:pl-[14vw] pr-[8vw] lg:pr-[12vw] xl:pr-[14vw] will-change-transform"
+            className="flex items-center gap-6 lg:gap-8 pl-[8vw] lg:pl-[12vw] xl:pl-[14vw] pr-[8vw] lg:pr-[12vw] xl:pr-[14vw] will-change-transform"
           >
             {services.map((s) => (
               <ServiceCard key={s.index} service={s} />
@@ -176,7 +176,7 @@ function ServicesDesktop() {
 
 function ServiceCard({ service }: { service: (typeof services)[number] }) {
   return (
-    <div className="group relative flex-shrink-0 w-[34vw] lg:w-[28vw] xl:w-[24vw] h-[42vh] lg:h-[46vh] flex flex-col rounded-[2px] overflow-hidden">
+    <div className="group relative flex-shrink-0 w-[34vw] lg:w-[28vw] xl:w-[24vw] h-[calc(100vh-260px)] max-h-[480px] flex flex-col rounded-[2px] overflow-hidden">
       {/* Image — top portion */}
       <div className="relative flex-[1.1] overflow-hidden bg-stone-700">
         <Image
