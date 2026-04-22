@@ -41,15 +41,15 @@ export function MaskLines({ children, className, delay = 0, lineClassName }: Mas
   return (
     <span className={cn("inline-block", className)}>
       {words.map((w, i) => (
-        <span key={i} className={cn("inline-block overflow-hidden align-bottom", lineClassName)}>
+        <span key={i} className={cn("inline-block align-bottom", lineClassName)}>
           <motion.span
-            initial={{ y: "110%" }}
-            whileInView={{ y: "0%" }}
-            viewport={{ once: true, amount: 0.5 }}
+            initial={{ opacity: 0, y: "20%" }}
+            whileInView={{ opacity: 1, y: "0%" }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{
-              duration: 1.1,
+              duration: 0.8,
               ease: [0.16, 1, 0.3, 1],
-              delay: delay + i * 0.055,
+              delay: delay + i * 0.04,
             }}
             className="inline-block"
           >

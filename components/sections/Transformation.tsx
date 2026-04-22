@@ -18,7 +18,7 @@ export function Transformation() {
     <section ref={ref} id="transformation" className="relative bg-ivory py-12 md:py-16 overflow-hidden">
       <div className="container-x">
         <div className="grid grid-cols-12 gap-6 md:gap-10">
-          <div className="col-span-12 md:col-span-5">
+          <div className="col-span-12 md:col-span-5 relative z-10">
             <SectionMarker label="Outcomes" />
             <h2 className="mt-4 font-serif-display font-serif text-display-md md:text-display-lg text-stone-800 tracking-tightest balance">
               <MaskLines>Quiet</MaskLines>{" "}
@@ -52,7 +52,7 @@ export function Transformation() {
           <div className="col-span-12 md:col-span-7 relative min-h-[600px]">
             <motion.div
               style={{ y: yA }}
-              className="absolute top-0 left-0 w-[58%] aspect-[3/4] overflow-hidden rounded-[2px]"
+              className="absolute top-0 left-[8%] w-[52%] aspect-[3/4] overflow-hidden rounded-[2px]"
             >
               <Image
                 src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=1200&q=85"

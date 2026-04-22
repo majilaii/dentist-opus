@@ -122,8 +122,8 @@ function ServicesDesktop() {
       style={{ height: `${services.length * 65}vh` }}
     >
       <div className="sticky top-0 h-[100svh] overflow-hidden flex flex-col">
-        <div className="container-x pt-10 md:pt-12 pb-8 md:pb-12">
-          <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-3 md:gap-4">
+        <div className="container-x pt-10 md:pt-12 pb-6 md:pb-8">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
             <div>
               <SectionMarker label="Signature Services" />
               <h2 className="mt-3 font-serif-display font-serif text-display-md md:text-display-lg text-stone-800 tracking-tightest balance">
@@ -134,7 +134,7 @@ function ServicesDesktop() {
                 </em>
               </h2>
             </div>
-            <Reveal delay={0.2} className="max-w-sm text-[0.95rem] leading-[1.6] text-stone-600 md:-mt-1">
+            <Reveal delay={0.2} className="max-w-sm text-[0.95rem] leading-[1.6] text-stone-600">
               Scroll through our signature services — from preventive care to full
               porcelain restoration. Every visit is planned, never improvised.
             </Reveal>

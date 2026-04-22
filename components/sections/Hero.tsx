@@ -118,7 +118,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 1.15 }}
-              className="mt-3 md:mt-4 max-w-md font-sans text-[0.98rem] leading-[1.65] text-stone-600 pretty"
+              className="mt-5 md:mt-6 max-w-md font-sans text-[0.98rem] leading-[1.65] text-stone-600 pretty"
             >
               A modern private practice on Fillmore — offering unhurried consultations,
               considered cosmetic and restorative dentistry, and a deep respect for the
