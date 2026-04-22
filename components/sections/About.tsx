@@ -34,7 +34,7 @@ export function About() {
               <MaskLines delay={0.2}>on us.</MaskLines>
             </h2>
 
-            <div className="mt-7 md:mt-8 space-y-4 max-w-xl">
+            <div className="mt-5 md:mt-6 space-y-4 max-w-xl">
               <Reveal delay={0.15}>
                 <p className="text-[1.02rem] leading-[1.65] text-stone-700 pretty">
                   Noble &amp; Ash was built on a single conviction: modern dentistry can be
@@ -66,7 +66,7 @@ export function About() {
           {/* Image column — stretches to match text height on desktop */}
           <motion.div
             style={{ y: yImg }}
-            className="col-span-12 md:col-span-5 relative aspect-[4/5] md:aspect-auto md:h-[820px] overflow-hidden rounded-[2px] bg-stone-200"
+            className="col-span-12 md:col-span-5 relative aspect-[4/5] md:aspect-auto md:h-[640px] overflow-hidden rounded-[2px] bg-stone-200"
           >
             <Image
               src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1400&q=85"
