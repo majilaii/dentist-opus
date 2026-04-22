@@ -197,16 +197,16 @@ function ServiceCard({ service }: { service: (typeof services)[number] }) {
         </div>
       </div>
 
-      {/* Text — solid background, never hidden */}
-      <div className="flex-1 bg-stone-800 p-5 md:p-6 flex flex-col justify-center text-ivory">
-        <h3 className="font-serif text-2xl md:text-[1.7rem] tracking-tightest leading-[1.08] text-ivory mb-2">
+      {/* Text — solid background */}
+      <div className="h-[180px] bg-stone-800 p-4 md:p-5 flex flex-col justify-center text-ivory overflow-y-auto">
+        <h3 className="font-serif text-xl md:text-2xl tracking-tightest leading-[1.08] text-ivory mb-1.5">
           {service.title}
         </h3>
-        <p className="text-[0.82rem] leading-[1.55] text-ivory/75 mb-3 line-clamp-3">
-          {service.description}
+        <p className="text-[0.78rem] leading-[1.5] text-ivory/75 mb-2">
+          {service.short}
         </p>
-        <ul className="flex flex-wrap gap-x-4 gap-y-1.5 text-[0.72rem] text-ivory/60">
-          {service.features.map((f) => (
+        <ul className="flex flex-wrap gap-x-3 gap-y-1 text-[0.68rem] text-ivory/50">
+          {service.features.slice(0, 3).map((f) => (
             <li key={f} className="flex items-center gap-1.5">
               <span className="h-1 w-1 rounded-full bg-champagne" />
               {f}

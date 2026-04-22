@@ -35,7 +35,7 @@ export const services = [
       "Routine cleanings, low-dose digital imaging, and preventive planning built around long-term oral health — delivered in an unhurried, comfortable setting.",
     features: ["Professional hygiene", "Digital low-dose X-ray", "Oral cancer screening", "Risk mapping"],
     image:
-      "https://images.unsplash.com/photo-1629909615957-be38d48fbbe4?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1588776814546-daab30f310ce?auto=format&fit=crop&w=1600&q=80",
   },
   {
     index: "02",
@@ -55,7 +55,7 @@ export const services = [
       "Clear aligner treatment guided by 3D planning and biweekly check-ins. Designed for adults who want movement without compromise to daily life.",
     features: ["3D treatment simulation", "Invisalign Diamond provider", "Biweekly progress care", "Retention planning"],
     image:
-      "https://images.unsplash.com/photo-1612004192060-4dffd7cd81cd?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1600&q=80",
   },
   {
     index: "04",
