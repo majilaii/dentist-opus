@@ -27,7 +27,7 @@ export function Hero() {
       />
       <div aria-hidden className="absolute inset-0 grain" />
 
-      <div className="container-x relative grid grid-cols-12 gap-6 pb-12 pt-2 md:gap-8 md:pt-2 lg:pt-3 lg:pb-16">
+      <div className="container-x relative grid grid-cols-12 gap-6 pb-12 pt-2 md:gap-8 md:pt-2 lg:pt-3 lg:pb-16 lg:min-h-[calc(100svh-72px)] lg:content-center">
         {/* Desktop-only portrait column */}
         <motion.div
           style={{ y: yLeft }}

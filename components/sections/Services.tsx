@@ -89,12 +89,16 @@ function ServicesDesktop() {
   const trackRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
   const [range, setRange] = useState(0);
+  const [sectionHeight, setSectionHeight] = useState(services.length * 65);
   const [active, setActive] = useState(0);
 
   useEffect(() => {
     const update = () => {
       if (trackRef.current && window.innerWidth >= 768) {
-        setRange(Math.max(0, trackRef.current.scrollWidth - window.innerWidth));
+        const r = Math.max(0, trackRef.current.scrollWidth - window.innerWidth);
+        setRange(r);
+        const vh = 100 + (r / window.innerHeight) * 100 + 20;
+        setSectionHeight(vh);
       }
     };
     update();
@@ -119,7 +123,7 @@ function ServicesDesktop() {
     <section
       ref={ref}
       className="hidden md:block relative bg-ivory"
-      style={{ height: `${services.length * 65}vh` }}
+      style={{ height: `${sectionHeight}vh` }}
     >
       <div className="sticky top-0 h-[100svh] overflow-hidden flex flex-col">
         <div className="container-x pt-10 md:pt-12 pb-6 md:pb-8">
@@ -176,7 +180,7 @@ function ServicesDesktop() {
 
 function ServiceCard({ service }: { service: (typeof services)[number] }) {
   return (
-    <div className="group relative flex-shrink-0 w-[30vw] lg:w-[24vw] xl:w-[20vw] h-[min(calc(100vh-360px),420px)] flex flex-col rounded-[2px] overflow-hidden">
+    <div className="group relative flex-shrink-0 w-[30vw] lg:w-[24vw] xl:w-[22vw] 2xl:w-[340px] h-[min(calc(100vh-320px),520px)] flex flex-col rounded-[2px] overflow-hidden">
       {/* Image — top portion */}
       <div className="relative flex-[1.1] overflow-hidden bg-stone-700">
         <Image
